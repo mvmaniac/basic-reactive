@@ -1,8 +1,5 @@
 package io.devfactory.rxjava3.operators;
 
-import static io.devfactory.utils.LogType.DO_ON_NEXT;
-import static io.devfactory.utils.LogType.ON_NEXT;
-
 import io.devfactory.rxjava3.common.Searcher;
 import io.devfactory.utils.Logger;
 import io.devfactory.utils.TimeUtil;
@@ -11,43 +8,53 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-// 데이터 변환 연산자 1
-@SuppressWarnings("squid:S106")
+import static io.devfactory.utils.LogType.*;
+
+@SuppressWarnings({"squid:S125", "squid:S1144", "squid:S1192"})
 public class DataConversionOperatorExample1 {
 
+  // 데이터 변환 연산자 1
   public static void main(String[] args) throws InterruptedException {
-    // map
-    // Observable 이 통지한 항목에 함수를 적용하여 통지된 값을 변환
-    // null을 반환하면 NullpointException이 발생하므로 null이 아닌 데이터 하나를 반드시 반환
+//    map();
+//    flatMap();
+//    concatMap();
+//    switchMap();
+//    quiz();
+  }
+
+  // map
+  // Observable 이 통지한 항목에 함수를 적용하여 통지된 값을 변환
+  // null을 반환하면 NullpointException이 발생하므로 null이 아닌 데이터 하나를 반드시 반환
+  private static void map() {
     List<Integer> oddList = Arrays.asList(1, 3, 5, 7);
     Observable.fromIterable(oddList)
         .map(num -> "1을 더한 결과: " + (num + 1))
         .subscribe(data -> Logger.log(ON_NEXT, data));
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     Observable.just("korea", "america", "canada", "paris", "japan", "china")
         .filter(country -> country.length() == 5)
         .map(country -> country.toUpperCase().charAt(0) + country.substring(1))
         .subscribe(data -> Logger.log(ON_NEXT, data));
+  }
 
-    System.out.println("=====================================");
-
-    // flatMap
-    // 원본 데이터를 원하는 값으로 변환 후 통지하는것은 map과 같음
-    // 1 대 다 변환하므로 데이터 한개로 여러 데이터를 통지
-    // map은 변환된 데이터를 반환하지만 flatMap은 변환 된 여러개의 데이터를 담고 있는 새로운 Observable을 반환
+  // flatMap
+  // 원본 데이터를 원하는 값으로 변환 후 통지하는것은 map과 같음
+  // 1 대 다 변환하므로 데이터 한개로 여러 데이터를 통지
+  // map은 변환된 데이터를 반환하지만 flatMap은 변환 된 여러개의 데이터를 담고 있는 새로운 Observable을 반환
+  private static void flatMap() {
     Observable.just("Hello")
         .flatMap(hello -> Observable.just("자바", "파이썬", "안드로이드").map(lang -> hello + ", " + lang))
         .subscribe(data -> Logger.log(ON_NEXT, data));
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     Observable.range(2, 1)
         .flatMap(num -> Observable.range(1, 9).map(row -> num + " * " + row + " = " + num * row))
         .subscribe(data -> Logger.log(ON_NEXT, data));
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     // 원본 데이터와 변환된 데이터를 조합해서 새로운 데이터를 통지
     // Observable에 원본 데이터 + 변환된 데이터 = 최종 데이터 를 실어서 반환
@@ -58,14 +65,13 @@ public class DataConversionOperatorExample1 {
                 sourceData + " * " + transformedData + " = " + sourceData * transformedData
         )
         .subscribe(data -> Logger.log(ON_NEXT, data));
+  }
 
-    System.out.println("=====================================");
-
-    // concatMap
-    // flatMap과 마찬가지로 받은 데이터를 변환하여 새로운 Observable 로 반환
-    // 반환된 새로운 Observable을 하나씩 순서대로 실행하는것이 FlatMap과 다름
-    // 데이터의 처리 순서는 보장하지만 처리중인 Observable의 처리가 끝나야 다음 Observable이 실행되므로 처리 성능에는 영향을 줄 수 있음
-
+  // concatMap
+  // flatMap과 마찬가지로 받은 데이터를 변환하여 새로운 Observable 로 반환
+  // 반환된 새로운 Observable을 하나씩 순서대로 실행하는것이 FlatMap과 다름
+  // 데이터의 처리 순서는 보장하지만 처리중인 Observable의 처리가 끝나야 다음 Observable이 실행되므로 처리 성능에는 영향을 줄 수 있음
+  private static void concatMap() {
     // 순서를 보장해주는 concatMap
     // 순차적으로 실행되기때문에 flatMap보다 느림
     TimeUtil.start();
@@ -89,7 +95,7 @@ public class DataConversionOperatorExample1 {
 
     TimeUtil.sleep(5000L);
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     // concatMap과 달리 순서를 보장해주지 않는 flatMap
     // 실행 속도가 concatMap 보다 빠르다.
@@ -113,14 +119,15 @@ public class DataConversionOperatorExample1 {
             });
 
     TimeUtil.sleep(3000L);
+  }
 
-    System.out.println("=====================================");
+  // switchMap
+  // concatMap과 마찬가지로 받은 데이터를 변환하여 새로운 Observable로 반환
+  // concatMap과 다른점은 switchMap은 순서를 보장하지만 새로운 데이터가 통지되면 현재 처리중이던 작업을 바로 중단
+  // 여러개의 발행된 값 중에 마지막에 들어온 값만 처리하고자 할 때 유용
+  private static void switchMap() throws InterruptedException {
+    Logger.log(PRINT, "# start");
 
-    // switchMap
-    // concatMap과 마찬가지로 받은 데이터를 변환하여 새로운 Observable로 반환
-    // concatMap과 다른점은 switchMap은 순서를 보장하지만 새로운 데이터가 통지되면 현재 처리중이던 작업을 바로 중단
-    // 여러개의 발행된 값 중에 마지막에 들어온 값만 처리하고자 할 때 유용
-    System.out.println("# start : " + TimeUtil.getCurrentTimeFormatted());
     Observable.interval(100L, TimeUnit.MILLISECONDS)
         .take(4)
         .skip(2)
@@ -135,7 +142,7 @@ public class DataConversionOperatorExample1 {
 
     Thread.sleep(5000);
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     // witchMap 대신 concatMap을 쓸 경우 비효율적인 검색 예제
     TimeUtil.start();
@@ -150,8 +157,7 @@ public class DataConversionOperatorExample1 {
           String keyword = keywords.get(data.intValue()); // 데이터베이스에서 조회한다고 가정한다.
 
           return Observable.just(searcher.search(keyword))
-              .doOnNext(notUse -> System.out
-                  .println("================================================================="))
+              .doOnNext(notUse -> Logger.log("============================================"))
               .delay(1000L, TimeUnit.MILLISECONDS);
         })
         .flatMap(Observable::fromIterable)
@@ -167,7 +173,7 @@ public class DataConversionOperatorExample1 {
 
     TimeUtil.sleep(6000L);
 
-    System.out.println("--------------------------------------");
+    Logger.log("---------------------------------------------------------------------");
 
     // switchMap을 이용한 효율적인 키워드 검색 예제
     TimeUtil.start();
@@ -193,9 +199,9 @@ public class DataConversionOperatorExample1 {
         );
 
     TimeUtil.sleep(2000L);
+  }
 
-    System.out.println("=====================================");
-
+  private static void quiz() {
     // range, filter, map을 이용하여 1부터 15 까지의 숫자 중에 2의 배수만 필터링 한 후, 필터링된 숫자에 제곱한 숫자를 출력
     Observable.range(1, 15)
         .filter(data -> data % 2 == 0)

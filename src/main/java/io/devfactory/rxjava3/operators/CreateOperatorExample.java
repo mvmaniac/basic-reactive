@@ -14,18 +14,18 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-// Flowable/Observable 생성 연산자
-// create 연산자는 object 패키지 참고
-@SuppressWarnings({"squid:S125", "squid:S1144"})
+@SuppressWarnings({"squid:S125", "squid:S1144", "squid:S1192"})
 public class CreateOperatorExample {
 
+  // Flowable/Observable 생성 연산자
+  // create 연산자는 object 패키지 참고
   public static void main(String[] args) throws InterruptedException {
-    //interval();
-    //range();
-    //timer();
-    //defer();
-    //fromIterable();
-    fromFuture();
+//    interval();
+//    range();
+//    timer();
+//    defer();
+//    fromIterable();
+//    fromFuture();
   }
 
   // interval
