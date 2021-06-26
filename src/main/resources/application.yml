@@ -1,1 +1,20 @@
+spring:
+  application:
+    name: basic-reactive
 
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  sql:
+    init:
+      platform: h2
+      schema-locations: classpath:sql/schema-${spring.sql.init.platform}.sql
+      data-locations: classpath:sql/data-${spring.sql.init.platform}.sql
+
+logging:
+  level:
+    org.springframework.transaction: trace
+    org.springframework.r2dbc: debug
