@@ -1,8 +1,8 @@
 package io.devfactory.rxjava3.future;
 
-import static io.devfactory.utils.LogType.PRINT;
+import static io.devfactory.rxjava3.utils.LogType.PRINT;
 
-import io.devfactory.utils.Logger;
+import io.devfactory.rxjava3.utils.Logger;
 
 @SuppressWarnings("squid:S106")
 public class FutureExampleSync {

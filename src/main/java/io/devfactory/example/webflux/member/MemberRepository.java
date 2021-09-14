@@ -1,4 +1,4 @@
-package io.devfactory.webflux.member;
+package io.devfactory.example.webflux.member;
 
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

@@ -1,7 +1,6 @@
-package io.devfactory.servlet;
+package io.devfactory.example.servlet;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +14,7 @@ import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 
 @SuppressWarnings("squid:S2142")
 @Slf4j
-@WebServlet(name = "basicServlet", urlPatterns = "/servlet/basic")
+@WebServlet(name = "basicServlet", urlPatterns = "/example/servlet/basic")
 public class BasicServlet extends HttpServlet {
 
   @Override

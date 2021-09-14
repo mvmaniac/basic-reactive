@@ -1,12 +1,12 @@
 package io.devfactory.rxjava3.operators;
 
-import static io.devfactory.utils.LogType.ON_NEXT;
-import static io.devfactory.utils.LogType.PRINT;
+import static io.devfactory.rxjava3.utils.LogType.ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.PRINT;
 
 import io.devfactory.rxjava3.common.Car;
 import io.devfactory.rxjava3.common.CarMaker;
 import io.devfactory.rxjava3.common.SampleData;
-import io.devfactory.utils.Logger;
+import io.devfactory.rxjava3.utils.Logger;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.observables.GroupedObservable;

@@ -1,10 +1,10 @@
 package io.devfactory.rxjava3.object.flowable;
 
-import static io.devfactory.utils.LogType.ON_ERROR;
-import static io.devfactory.utils.LogType.ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.ON_ERROR;
+import static io.devfactory.rxjava3.utils.LogType.ON_NEXT;
 
-import io.devfactory.utils.LogType;
-import io.devfactory.utils.Logger;
+import io.devfactory.rxjava3.utils.LogType;
+import io.devfactory.rxjava3.utils.Logger;
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.schedulers.Schedulers;

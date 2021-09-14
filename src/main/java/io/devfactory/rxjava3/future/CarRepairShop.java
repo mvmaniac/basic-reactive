@@ -1,7 +1,7 @@
 package io.devfactory.rxjava3.future;
 
-import io.devfactory.utils.LogType;
-import io.devfactory.utils.Logger;
+import io.devfactory.rxjava3.utils.LogType;
+import io.devfactory.rxjava3.utils.Logger;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 

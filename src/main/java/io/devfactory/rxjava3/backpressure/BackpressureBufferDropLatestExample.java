@@ -1,13 +1,13 @@
 package io.devfactory.rxjava3.backpressure;
 
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import java.util.concurrent.TimeUnit;
 
-import static io.devfactory.utils.LogType.*;
+import static io.devfactory.rxjava3.utils.LogType.*;
 import static io.reactivex.rxjava3.core.BackpressureOverflowStrategy.DROP_LATEST;
 
 @SuppressWarnings({"squid:S106","squid:S3457"})

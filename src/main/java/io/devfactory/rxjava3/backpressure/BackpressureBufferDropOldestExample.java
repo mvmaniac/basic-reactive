@@ -1,14 +1,13 @@
 package io.devfactory.rxjava3.backpressure;
 
-import static io.devfactory.utils.LogType.DO_ON_NEXT;
-import static io.devfactory.utils.LogType.ON_ERROR;
-import static io.devfactory.utils.LogType.ON_NEXT;
-import static io.devfactory.utils.LogType.PRINT;
-import static io.reactivex.rxjava3.core.BackpressureOverflowStrategy.DROP_LATEST;
+import static io.devfactory.rxjava3.utils.LogType.DO_ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.ON_ERROR;
+import static io.devfactory.rxjava3.utils.LogType.ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.PRINT;
 import static io.reactivex.rxjava3.core.BackpressureOverflowStrategy.DROP_OLDEST;
 
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package io.devfactory.webflux.member;
+package io.devfactory.example.webflux.member;
 
 import lombok.Builder;
 import lombok.Getter;

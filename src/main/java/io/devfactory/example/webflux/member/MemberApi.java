@@ -1,4 +1,4 @@
-package io.devfactory.webflux.member;
+package io.devfactory.example.webflux.member;
 
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.*;

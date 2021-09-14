@@ -1,11 +1,11 @@
 package io.devfactory.rxjava3.operators;
 
-import static io.devfactory.utils.LogType.ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.ON_NEXT;
 
 import io.devfactory.rxjava3.common.SampleData;
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.NumberUtil;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.NumberUtil;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Observable;
 import java.util.Arrays;
 import java.util.Collections;

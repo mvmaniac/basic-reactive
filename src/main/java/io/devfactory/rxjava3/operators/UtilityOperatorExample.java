@@ -1,15 +1,15 @@
 package io.devfactory.rxjava3.operators;
 
-import io.devfactory.utils.LogType;
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.NumberUtil;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.LogType;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.NumberUtil;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-import static io.devfactory.utils.LogType.*;
+import static io.devfactory.rxjava3.utils.LogType.*;
 
 @SuppressWarnings({"squid:S125", "squid:S1144", "squid:S1192"})
 public class UtilityOperatorExample {

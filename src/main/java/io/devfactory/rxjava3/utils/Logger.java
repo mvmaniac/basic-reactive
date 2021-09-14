@@ -1,4 +1,4 @@
-package io.devfactory.utils;
+package io.devfactory.rxjava3.utils;
 
 public class Logger {
 

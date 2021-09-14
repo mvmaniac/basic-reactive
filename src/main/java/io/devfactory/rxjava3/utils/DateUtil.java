@@ -1,8 +1,11 @@
-package io.devfactory.utils;
+package io.devfactory.rxjava3.utils;
+
+import lombok.experimental.UtilityClass;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+@UtilityClass
 public class DateUtil {
 
   public static String getNowDate() {

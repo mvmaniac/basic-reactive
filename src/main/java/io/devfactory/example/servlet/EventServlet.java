@@ -1,4 +1,4 @@
-package io.devfactory.servlet;
+package io.devfactory.example.servlet;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE;
 
 @SuppressWarnings("squid:S2142")
 @Slf4j
-@WebServlet(name = "eventServlet", urlPatterns = "/servlet/event")
+@WebServlet(name = "eventServlet", urlPatterns = "/example/servlet/event")
 public class EventServlet extends HttpServlet {
 
   @Override

@@ -1,11 +1,11 @@
 package io.devfactory.rxjava3.object.maybe;
 
-import static io.devfactory.utils.LogType.ON_COMPLETE;
-import static io.devfactory.utils.LogType.ON_ERROR;
-import static io.devfactory.utils.LogType.ON_SUCCESS;
+import static io.devfactory.rxjava3.utils.LogType.ON_COMPLETE;
+import static io.devfactory.rxjava3.utils.LogType.ON_ERROR;
+import static io.devfactory.rxjava3.utils.LogType.ON_SUCCESS;
 
-import io.devfactory.utils.DateUtil;
-import io.devfactory.utils.Logger;
+import io.devfactory.rxjava3.utils.DateUtil;
+import io.devfactory.rxjava3.utils.Logger;
 import io.reactivex.rxjava3.core.Maybe;
 import io.reactivex.rxjava3.core.Single;
 

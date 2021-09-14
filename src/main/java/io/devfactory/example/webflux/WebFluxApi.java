@@ -1,4 +1,4 @@
-package io.devfactory.webflux;
+package io.devfactory.example.webflux;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +8,7 @@ import reactor.core.publisher.Flux;
 import static java.time.Duration.ofSeconds;
 import static org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE;
 
-@RequestMapping("/web-flux")
+@RequestMapping("/example/web-flux")
 @RestController
 public class WebFluxApi {
 

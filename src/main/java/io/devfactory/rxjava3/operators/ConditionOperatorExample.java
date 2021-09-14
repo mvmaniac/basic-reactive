@@ -1,15 +1,15 @@
 package io.devfactory.rxjava3.operators;
 
-import static io.devfactory.utils.LogType.DO_ON_COMPLETE;
-import static io.devfactory.utils.LogType.DO_ON_NEXT;
-import static io.devfactory.utils.LogType.ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.DO_ON_COMPLETE;
+import static io.devfactory.rxjava3.utils.LogType.DO_ON_NEXT;
+import static io.devfactory.rxjava3.utils.LogType.ON_NEXT;
 
 import io.devfactory.rxjava3.common.Car;
 import io.devfactory.rxjava3.common.CarMaker;
 import io.devfactory.rxjava3.common.SampleData;
-import io.devfactory.utils.LogType;
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.LogType;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.Arrays;

@@ -1,14 +1,17 @@
-package io.devfactory.utils;
+package io.devfactory.rxjava3.utils;
+
+import lombok.experimental.UtilityClass;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+@UtilityClass
 public class TimeUtil {
 
   public static long start;
   public static long end;
 
-  final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+  static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 
   public static long start() {
     start = System.currentTimeMillis();

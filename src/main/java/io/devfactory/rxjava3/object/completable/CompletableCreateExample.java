@@ -1,11 +1,11 @@
 package io.devfactory.rxjava3.object.completable;
 
-import static io.devfactory.utils.LogType.ON_COMPLETE;
-import static io.devfactory.utils.LogType.ON_ERROR;
-import static io.devfactory.utils.LogType.PRINT;
+import static io.devfactory.rxjava3.utils.LogType.ON_COMPLETE;
+import static io.devfactory.rxjava3.utils.LogType.ON_ERROR;
+import static io.devfactory.rxjava3.utils.LogType.PRINT;
 
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 

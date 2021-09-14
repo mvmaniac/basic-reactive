@@ -1,14 +1,14 @@
 package io.devfactory.rxjava3.operators;
 
 import io.devfactory.rxjava3.common.Searcher;
-import io.devfactory.utils.Logger;
-import io.devfactory.utils.TimeUtil;
+import io.devfactory.rxjava3.utils.Logger;
+import io.devfactory.rxjava3.utils.TimeUtil;
 import io.reactivex.rxjava3.core.Observable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static io.devfactory.utils.LogType.*;
+import static io.devfactory.rxjava3.utils.LogType.*;
 
 @SuppressWarnings({"squid:S125", "squid:S1144", "squid:S1192"})
 public class DataConversionOperatorExample1 {
