@@ -1,6 +1,7 @@
 package io.devfactory;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
@@ -17,7 +18,12 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class BasicReactiveApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(BasicReactiveApplication.class, args);
+    SpringApplication application = new SpringApplication(BasicReactiveApplication.class);
+    application.setWebApplicationType(WebApplicationType.REACTIVE);
+
+    // starter-web은 SERVLET으로 자동으로 선택한다. 이것을 강제로 REACTIVE로 바꾸던가
+    // spring-boot-starter-web 의존성을 제거 해야함, 여기서는 전자를 택함
+    application.run(args);
   }
 
 }

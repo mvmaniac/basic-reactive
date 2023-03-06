@@ -14,6 +14,10 @@ spring:
       schema-locations: classpath:sql/schema-${spring.sql.init.platform}.sql
       data-locations: classpath:sql/data-${spring.sql.init.platform}.sql
 
+  devtools:
+    restart.enabled: false
+    livereload.enabled: true
+
 logging:
   level:
     org.springframework.transaction: trace
