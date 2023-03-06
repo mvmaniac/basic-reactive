@@ -1,14 +1,14 @@
 plugins {
-  id 'org.springframework.boot' version '2.5.2'
-  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'org.springframework.boot' version '3.1.0'
+  id 'io.spring.dependency-management' version '1.1.0'
   id 'java'
   id 'war' // 서블릿 땜시...
 }
 
 group = 'io.devfactory'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_16
-targetCompatibility = JavaVersion.VERSION_16
+sourceCompatibility = JavaVersion.VERSION_19
+targetCompatibility = JavaVersion.VERSION_19
 
 configurations {
   compileOnly {
@@ -21,13 +21,18 @@ repositories {
 }
 
 dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
   implementation 'org.springframework.boot:spring-boot-starter-web'
-  implementation 'io.reactivex.rxjava3:rxjava:3.0.8'
+  implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
 
   implementation 'org.springframework.boot:spring-boot-starter-webflux'
   implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 
   runtimeOnly 'io.r2dbc:r2dbc-h2'
+
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
   compileOnly 'org.projectlombok:lombok'
   annotationProcessor 'org.projectlombok:lombok'
@@ -40,6 +45,10 @@ dependencies {
   testImplementation 'io.projectreactor:reactor-test'
 }
 
-test {
+tasks.named('test') {
   useJUnitPlatform()
+}
+
+tasks.named('compileJava') {
+  inputs.files(tasks.named('processResources'))
 }
