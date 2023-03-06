@@ -7,7 +7,7 @@
 
 ### 2. 차이점
 
-- Spring Boot 2, Gradle 7 기반
+- Spring Boot 3, Gradle 8 기반
 
 ### 3. TODO
 
