@@ -20,5 +20,4 @@ spring:
 
 logging:
   level:
-    org.springframework.transaction: trace
-    org.springframework.r2dbc: debug
+    io.devfactory: debug
