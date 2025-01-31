@@ -1,6 +1,6 @@
 plugins {
-  id 'org.springframework.boot' version '3.2.3'
-  id 'io.spring.dependency-management' version '1.1.4'
+  id 'org.springframework.boot' version '3.4.2'
+  id 'io.spring.dependency-management' version '1.1.7'
   id 'java'
 }
 
@@ -8,8 +8,9 @@ group = 'io.devfactory'
 version = '0.0.1-SNAPSHOT'
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_21
-  targetCompatibility = JavaVersion.VERSION_21
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
 }
 
 configurations {
@@ -39,6 +40,7 @@ dependencies {
   testAnnotationProcessor 'org.projectlombok:lombok'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
